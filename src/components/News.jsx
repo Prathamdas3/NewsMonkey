@@ -1,7 +1,7 @@
 import React from "react";
 
-const Cards = () => {
+const News = () => {
   return <div></div>;
 };
 
-export default Cards;
+export default News;
