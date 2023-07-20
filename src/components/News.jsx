@@ -3,7 +3,7 @@ import Card from "./Cards";
 import HCard from "./HCards";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import Spinner from "../component/Spinner";
+import Spinner from "../components/Spinner";
 
 const News = (props) => {
   const [data, setData] = useState({
