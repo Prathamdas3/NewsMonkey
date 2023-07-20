@@ -3,10 +3,16 @@ import React from "react";
 const Cards = (props) => {
   return (
     <div>
-      <div className="flex flex-col rounded-xl bg-slate-300 max-w-96 m-3 p-4 gap-1">
+      <div
+        className={`flex flex-col rounded-xl bg-slate-300 max-w-96 m-3 p-4 gap-1`}
+      >
         <div className="">
           <img
-            src={props.image}
+            src={
+              props.image
+                ? props.image
+                : "https://techcrunch.com/wp-content/uploads/2023/03/Dunzo_Google_Reliance.jpg?resize=1200,485"
+            }
             alt=""
             className="h-64 max-w-80 rounded-t-xl "
           />
@@ -22,7 +28,11 @@ const Cards = (props) => {
             <small className="text-slate-500">date</small>
           </p>
           <button type="button" className="rounded-[10px] p-2 bg-blue-500 ">
-            <a href={props.link} target="_blank">
+            <a
+              href={props.link}
+              target="_blank"
+              className={`text-slate-${props.mode === 50 ? 950 : 50}`}
+            >
               Read More
             </a>
           </button>
