@@ -3,24 +3,27 @@ import Card from "./Cards";
 import HCard from "./HCards";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Spinner from "../component/Spinner";
 
 const News = (props) => {
   const [data, setData] = useState({
     articles: [],
-    loading: false,
+
     page: 1,
     totalResults: 0,
   });
+  const [spinner, setSpinner] = useState(false);
   useEffect(() => {
     const updateNews = async () => {
       const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=f4927d936a664ccd84d6f8f4561d1cfb`;
+      setSpinner(true);
       let data = await fetch(url);
       let parseData = await data.json();
       setData({
         articles: parseData.articles,
-        loading: false,
         totalResults: parseData.totalResults,
       });
+      setSpinner(false);
     };
 
     updateNews();
@@ -33,6 +36,7 @@ const News = (props) => {
   document.title = capitalCasing(props.category);
   return (
     <div className="container mx-auto">
+      {spinner && <Spinner />}
       <div className="grid lg:grid-cols-4">
         {data.articles.map((element) => (
           <Card
