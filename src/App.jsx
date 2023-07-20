@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Cards from "./components/Cards";
 import News from "./components/News";
 
 function App() {
@@ -18,8 +17,9 @@ function App() {
   return (
     <>
       <Navbar theme={mode} toggleTheme={toggleTheme} />
-      <News />
-      <Cards />
+      <section className="container mx-auto">
+        <News />
+      </section>
     </>
   );
 }
