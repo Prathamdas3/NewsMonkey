@@ -15,7 +15,7 @@ const Cards = () => {
             <small className="text-slate-500">date</small>
           </p>
           <button type="button" className="rounded-[10px] p-2 bg-blue-500 ">
-            Read Me
+            Read More
           </button>
         </div>
       </div>

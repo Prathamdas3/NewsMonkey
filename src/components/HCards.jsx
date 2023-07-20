@@ -4,9 +4,9 @@ import Test from "../assets/test.jpg";
 const HCards = () => {
   return (
     <div>
-      <div className="flex flex-row rounded-xl bg-slate-300 w-[70%] m-3 p-4 gap-3">
+      <div className="flex flex-row rounded-xl bg-slate-300 w-full m-3 p-4 gap-5 ">
         <div className="">
-          <img src={Test} alt="" className="w-80 h-72 rounded-l-xl " />
+          <img src={Test} alt="" className="w-96 h-72 rounded-l-xl " />
         </div>
         <div className="flex flex-col  justify-between">
           <div>
@@ -19,7 +19,7 @@ const HCards = () => {
             </p>
 
             <button type="button" className="rounded-[10px] p-2 bg-blue-500">
-              Read Me
+              Read More
             </button>
           </div>
         </div>

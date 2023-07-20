@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Cards from "./components/Cards";
 import News from "./components/News";
-import HCards from "./components/HCards";
 
 function App() {
   const [mode, setMode] = useState(50);
@@ -19,9 +17,9 @@ function App() {
   return (
     <>
       <Navbar theme={mode} toggleTheme={toggleTheme} />
-      <News />
-      <Cards />
-      <HCards />
+      <section className="container mx-auto">
+        <News />
+      </section>
     </>
   );
 }
