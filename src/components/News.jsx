@@ -3,7 +3,7 @@ import Card from "./Cards";
 import HCard from "./HCards";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import Spinner from "../component/Spinner";
+import Spinner from "../components/Spinner";
 
 const News = (props) => {
   const [data, setData] = useState({
@@ -36,7 +36,7 @@ const News = (props) => {
   document.title = capitalCasing(props.category);
   return (
     <div className="container mx-auto">
-      {spinner && <Spinner />}
+      {spinner && <Spinner mode={props.mode} />}
       <div className="grid lg:grid-cols-4">
         {data.articles.map((element) => (
           <Card

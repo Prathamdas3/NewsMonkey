@@ -3,6 +3,10 @@ import Light from "../assets/sun.svg";
 import Dark from "../assets/moon.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import CardMenu from "../assets/cardMenu.png";
+import CardMenuDark from "../assets/cardMenuDark.png";
+import ListMenu from "../assets/listMenu.png";
+import ListMenuDark from "../assets/listMenuDark.png";
 
 const Navbar = (props) => {
   return (
@@ -21,7 +25,25 @@ const Navbar = (props) => {
         </div>
 
         <div>
-          <ul className="flex justify-around gap-3">
+          <ul className="flex justify-around gap-3 items-center">
+            <div
+              className={`bg-slate-${
+                props.theme === 50 ? 50 : 300
+              } rounded-lg p-2 flex items-center gap-2`}
+            >
+              <button>
+                <img
+                  src={props.theme === 50 ? CardMenu : CardMenuDark}
+                  alt="card menu button"
+                />
+              </button>
+              <button>
+                <img
+                  src={props.theme === 50 ? ListMenu : ListMenuDark}
+                  alt="hamburger menu button"
+                />
+              </button>
+            </div>
             <li>
               <Link className="btn " to="/business">
                 Business
