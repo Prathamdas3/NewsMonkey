@@ -2,6 +2,8 @@ import React from "react";
 import Light from "../assets/sun.svg";
 import Dark from "../assets/moon.svg";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 const Navbar = (props) => {
   return (
     <nav>
@@ -13,40 +15,42 @@ const Navbar = (props) => {
         } p-4 border-b-[1px] border-slate-${props.theme === 50 ? 400 : 600}`}
       >
         <div>
-          <a className="btn text-xl ">NewsMonkey</a>
+          <Link className="btn text-xl " to="/">
+            NewsMonkey
+          </Link>
         </div>
 
         <div>
           <ul className="flex justify-around gap-3">
             <li>
-              <a className="btn " href="/">
-                business
-              </a>
+              <Link className="btn " to="/business">
+                Business
+              </Link>
             </li>
             <li>
-              <a className="btn " href="/">
-                entertainment
-              </a>
+              <Link className="btn " to="/entertainment">
+                Entertainment
+              </Link>
             </li>
             <li>
-              <a className="btn " href="/">
-                health
-              </a>
+              <Link className="btn " to="/health">
+                Health
+              </Link>
             </li>
             <li>
-              <a className="btn " href="/">
-                science
-              </a>
+              <Link className="btn " to="/science">
+                Science
+              </Link>
             </li>
             <li>
-              <a className="btn " href="/">
-                sports
-              </a>
+              <Link className="btn " to="/sports">
+                Sports
+              </Link>
             </li>
             <li>
-              <a className="btn " href="/">
-                technology
-              </a>
+              <Link className="btn " to="/technology">
+                Technology
+              </Link>
             </li>
             <li>
               <button type="button">
