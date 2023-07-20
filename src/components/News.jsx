@@ -36,7 +36,7 @@ const News = (props) => {
   document.title = capitalCasing(props.category);
   return (
     <div className="container mx-auto">
-      {spinner && <Spinner />}
+      {spinner && <Spinner mode={props.mode} />}
       <div className="grid lg:grid-cols-4">
         {data.articles.map((element) => (
           <Card
