@@ -7,10 +7,10 @@ const Navbar = (props) => {
     <nav>
       <div
         className={`flex flex-row justify-between items-center bg-slate-${
-          props.theme === 950 ? 950 : 50
+          props.theme === 50 ? 50 : 950
         } text-slate-${
-          props.theme === 950 ? 50 : 950
-        } p-4 border-b-[1px] border-slate-600`}
+          props.theme === 50 ? 950 : 50
+        } p-4 border-b-[1px] border-slate-${props.theme === 50 ? 400 : 600}`}
       >
         <div>
           <a className="btn text-xl ">NewsMonkey</a>
@@ -51,7 +51,7 @@ const Navbar = (props) => {
             <li>
               <button type="button">
                 <img
-                  src={props.theme === 950 ? Light : Dark}
+                  src={props.theme === 50 ? Dark : Light}
                   alt="turn on light mode"
                   onClick={props.toggleTheme}
                 />
