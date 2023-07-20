@@ -1,7 +1,7 @@
 import React from "react";
 import Light from "../assets/sun.svg";
 import Dark from "../assets/moon.svg";
-
+import PropTypes from "prop-types";
 const Navbar = (props) => {
   return (
     <nav>
@@ -65,3 +65,10 @@ const Navbar = (props) => {
 };
 
 export default Navbar;
+
+Navbar.PropsTypes = {
+  theme: PropTypes.number,
+};
+Navbar.defaultProps = {
+  theme: 50,
+};
