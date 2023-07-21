@@ -2,13 +2,12 @@ import React from "react";
 import Card from "./Cards";
 import HCard from "./HCards";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import Spinner from "../components/Spinner";
 
 const News = (props) => {
   const [data, setData] = useState({
     articles: [],
-
     page: 1,
     totalResults: 0,
   });
@@ -37,29 +36,48 @@ const News = (props) => {
   return (
     <div className="container mx-auto">
       {spinner && <Spinner mode={props.mode} />}
-      <div className="grid lg:grid-cols-4">
-        {data.articles.map((element) => (
-          <Card
-            key={element.url}
-            title={element.title}
-            image={element.urlToImage}
-            desc={element.description}
-            link={element.url}
-            mode={props.mode}
-          />
-        ))}
-      </div>
+      {props.cardButtonStyle ? (
+        <div className="grid lg:grid-cols-4">
+          {data.articles.map((element) => (
+            <Card
+              key={element.url}
+              title={element.title}
+              image={element.urlToImage}
+              desc={element.description}
+              link={element.url}
+              mode={props.mode}
+            />
+          ))}{" "}
+        </div>
+      ) : (
+        <div>
+          {data.articles.map((element) => (
+            <HCard
+              key={element.url}
+              title={element.title}
+              image={element.urlToImage}
+              desc={element.description}
+              link={element.url}
+              mode={props.mode}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default News;
 
-News.PropTypes = {
-  mode: PropTypes.number,
-  category: PropTypes.string,
+News.propTypes = {
+  mode: propTypes.number,
+  category: propTypes.string,
+  cardButtonStyle: propTypes.bool,
+  listButtonStyle: propTypes.bool,
 };
 News.defaultProps = {
   mode: 50,
   category: "general",
+  cardButtonStyle: true,
+  listButtonStyle: false,
 };
