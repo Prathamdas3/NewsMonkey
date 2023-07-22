@@ -4,6 +4,7 @@ import News from "./components/News";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const apiKey = import.meta.env.VITE_NEWS_API;
   const [mode, setMode] = useState(50);
   const [cardButtonStyle, setCardButtonStyle] = useState(true);
   const [listButtonStyle, setListButtonStyle] = useState(false);
@@ -44,6 +45,7 @@ function App() {
             path="/"
             element={
               <News
+                apiKey={apiKey}
                 key="general"
                 mode={mode}
                 category="general"
@@ -57,11 +59,13 @@ function App() {
             path="/business"
             element={
               <News
+                apiKey={apiKey}
                 key="business"
                 mode={mode}
                 category="business"
                 cardButtonStyle={cardButtonStyle}
                 listButtonStyle={listButtonStyle}
+                b
               />
             }
           />
@@ -70,6 +74,7 @@ function App() {
             path="/entertainment"
             element={
               <News
+                apiKey={apiKey}
                 key="Entertainment"
                 mode={mode}
                 category="entertainment"
@@ -83,6 +88,7 @@ function App() {
             path="/science"
             element={
               <News
+                apiKey={apiKey}
                 key="science"
                 mode={mode}
                 category="science"
@@ -96,6 +102,7 @@ function App() {
             path="/sports"
             element={
               <News
+                apiKey={apiKey}
                 key="sports"
                 mode={mode}
                 category="sports"
@@ -109,6 +116,7 @@ function App() {
             path="/health"
             element={
               <News
+                apiKey={apiKey}
                 key="health"
                 mode={mode}
                 category="health"
@@ -122,6 +130,7 @@ function App() {
             path="/technology"
             element={
               <News
+                apiKey={apiKey}
                 key="technology"
                 mode={mode}
                 category="technology"

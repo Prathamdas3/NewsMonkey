@@ -14,7 +14,7 @@ const News = (props) => {
   const [spinner, setSpinner] = useState(false);
   useEffect(() => {
     const updateNews = async () => {
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=f4927d936a664ccd84d6f8f4561d1cfb`;
+      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apiKey}`;
       setSpinner(true);
       let data = await fetch(url);
       let parseData = await data.json();
