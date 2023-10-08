@@ -1,9 +1,9 @@
-import React from "react";
-import Card from "./Cards";
-import HCard from "./HCards";
-import { useState, useEffect } from "react";
-import propTypes from "prop-types";
-import Spinner from "../components/Spinner";
+import React from 'react';
+import Card from './Cards';
+import HCard from './HCards';
+import { useState, useEffect } from 'react';
+import propTypes from 'prop-types';
+import Spinner from './Spinner';
 
 const News = (props) => {
   const [data, setData] = useState({
@@ -47,7 +47,7 @@ const News = (props) => {
               link={element.url}
               mode={props.mode}
             />
-          ))}{" "}
+          ))}{' '}
         </div>
       ) : (
         <div>
@@ -77,7 +77,7 @@ News.propTypes = {
 };
 News.defaultProps = {
   mode: 50,
-  category: "general",
+  category: 'general',
   cardButtonStyle: true,
   listButtonStyle: false,
 };
